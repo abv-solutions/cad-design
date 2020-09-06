@@ -1,0 +1,139 @@
+// Container
+.container {
+  width: 80%;
+  max-width: $max-width;
+  margin: auto;
+  overflow: hidden;
+}
+
+// Text styles
+.x-large {
+  font-size: clamp(2rem, calc(5.5vh + 1rem), 4rem);
+  font-weight: normal;
+  line-height: 1.4;
+}
+.large {
+  font-size: clamp(1.3rem, calc(4vh + 0.5rem), 2.5rem);
+  font-weight: normal;
+  line-height: 1.2;
+}
+.lead {
+  font-size: 1.5rem;
+}
+.center {
+  text-align: center;
+}
+
+// Backgrounds
+.bg {
+  &-primary {
+    @include set-background($primary-color);
+  }
+  &-dark {
+    @include set-background($dark-color);
+  }
+  &-light {
+    @include set-background($light-color);
+  }
+  &-danger {
+    @include set-background($danger-color);
+  }
+  &-success {
+    @include set-background($success-color);
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.3rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  &:hover {
+    background: darken($control-color, 5%);
+  }
+  &-primary {
+    @extend .btn;
+    @include set-background($primary-color);
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+  &-secondary {
+    @extend .btn;
+    @include set-background($secondary-color);
+    &:hover {
+      background: darken($secondary-color, 10%);
+    }
+  }
+  &-dark {
+    @extend .btn;
+    @include set-background($dark-color);
+    &:hover {
+      background: darken($dark-color, 10%);
+    }
+  }
+  &-light {
+    @extend .btn;
+    @include set-background($light-color);
+    font-weight: bold;
+    &:hover {
+      background: darken($light-color, 20%);
+    }
+  }
+  &-danger {
+    @extend .btn;
+    @include set-background($danger-color);
+    &:hover {
+      background: darken($danger-color, 10%);
+    }
+  }
+  &-success {
+    @extend .btn;
+    @include set-background($success-color);
+    &:hover {
+      background: darken($success-color, 10%);
+    }
+  }
+}
+
+.btn-lead {
+  font-size: clamp(1rem, calc(2vh + 0.4rem), 1.5rem);
+  margin-top: clamp(1rem, calc(3vh + 0.2rem), 3rem);
+  @include set-background(rgba($primary-color, 0.4));
+  &:hover {
+    background: rgba(darken($primary-color, 7%), 0.4);
+  }
+}
+
+// Alerts
+.alert {
+  padding: 0.8rem;
+  margin: 1rem;
+  opacity: 0.8;
+  border-radius: 5px;
+  background: $light-color;
+  color: $dark-color;
+  &.alert-primary {
+    @include set-background($primary-color);
+  }
+  &.alert-dark {
+    @include set-background($dark-color);
+  }
+  &.alert-success {
+    @include set-background($success-color);
+  }
+  &.alert-danger {
+    @include set-background($danger-color);
+  }
+}
+
+// Social icons
+i {
+  &.fa-linkedin {
+    color: #0077b5;
+  }
+}

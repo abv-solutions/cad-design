@@ -1,0 +1,100 @@
+// Variables
+$control-color: #eee;
+$primary-color: #008cff;
+$secondary-color: #00c72b;
+$dark-color: #252930;
+$light-color: #eee;
+$danger-color: #dc3545;
+$success-color: #28a745;
+$max-width: 1100px;
+$home-image: url('../img/showcase1.jpg');
+$background-opacity: 0.8;
+
+// Set text color based on background
+@function set-text-color($color) {
+  @if (lightness($color) > 60) {
+    @return $dark-color;
+  } @else {
+    @return $light-color;
+  }
+}
+
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+// Transition mixin
+@mixin transitionL {
+  transition: all 1.5s;
+}
+@mixin transitionM {
+  transition: all 0.7s;
+}
+@mixin transitionS {
+  transition: all 0.3s;
+}
+// Media queries
+@mixin mediaMd {
+  @media screen and (max-width: 850px) {
+    @content;
+  }
+}
+@mixin mediaSm {
+  @media screen and (max-width: 450px) {
+    @content;
+  }
+}
+@mixin mediaHSm {
+  @media screen and (max-height: 440px) {
+    @content;
+  }
+}
+
+// Margin & Padding
+$rems: (1, 2, 3, 4, 5);
+@each $rem in $rems {
+  .m-#{$rem} {
+    margin: #{$rem}rem;
+  }
+  .mx-#{$rem} {
+    margin: 0 #{$rem}rem;
+  }
+  .my-#{$rem} {
+    margin: #{$rem}rem 0;
+  }
+  .mt-#{$rem} {
+    margin-top: #{$rem}rem;
+  }
+  .mb-#{$rem} {
+    margin-bottom: #{$rem}rem;
+  }
+  .ml-#{$rem} {
+    margin-left: #{$rem}rem;
+  }
+  .mr-#{$rem} {
+    margin-right: #{$rem}rem;
+  }
+  .p-#{$rem} {
+    padding: #{$rem}rem;
+  }
+  .px-#{$rem} {
+    padding: 0 #{$rem}rem;
+  }
+  .py-#{$rem} {
+    padding: #{$rem}rem 0;
+  }
+  .pt-#{$rem} {
+    padding-top: #{$rem}rem;
+  }
+  .pb-#{$rem} {
+    padding-bottom: #{$rem}rem;
+  }
+  .pl-#{$rem} {
+    padding-left: #{$rem}rem;
+  }
+  .pr-#{$rem} {
+    padding-right: #{$rem}rem;
+  }
+}

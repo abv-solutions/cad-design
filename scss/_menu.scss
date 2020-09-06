@@ -1,0 +1,80 @@
+.hamburger-wrap {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  width: 3rem;
+  height: 3rem;
+  z-index: -1;
+  opacity: 0;
+}
+.hamburger-wrap .toggle {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+.hamburger-wrap .hamburger {
+  width: 3rem;
+  height: 3rem;
+}
+
+.hamburger-wrap .hamburger > span {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: $light-color;
+  transition: all cubic-bezier(0.25, 0.1, 0.3, 1.5) 0.3s;
+}
+
+.hamburger-wrap .hamburger > span:first-child {
+  top: 20%;
+}
+.hamburger-wrap .hamburger > span:nth-child(3) {
+  top: 80%;
+}
+
+.hamburger-wrap .toggle:checked + .hamburger > span {
+  background: set-text-color($control-color);
+}
+.hamburger-wrap .toggle:checked + .hamburger > span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-wrap .toggle:checked + .hamburger > span:first-child,
+.hamburger-wrap .toggle:checked + .hamburger > span:nth-child(3) {
+  top: 50%;
+}
+.hamburger-wrap .toggle:checked + .hamburger > span:first-child {
+  transform: rotate(45deg);
+}
+.hamburger-wrap .toggle:checked + .hamburger > span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.menu-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  background: rgba(darken($control-color, 10), $background-opacity);
+  border-bottom: 1px solid $dark-color;
+  .nav-item {
+    .nav-link {
+      @include transitionS;
+      display: inline-block;
+      font-size: clamp(1.2rem, calc(4vw + 0.3rem), 2rem);
+      padding: 1rem clamp(1rem, calc(2vw + 0.5rem), 3rem);
+      color: set-text-color($control-color);
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
