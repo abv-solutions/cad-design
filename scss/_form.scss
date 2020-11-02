@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   &-group {
-    margin: 1.2rem 0;
+    margin: 0.6rem 0;
   }
   input,
   select,
@@ -11,7 +11,7 @@
     font: inherit;
     font-size: 1.2rem;
     display: block;
-    width: clamp(14rem, calc(23vw + 10rem), 40rem);
+    width: clamp(13rem, calc(20vw + 9rem), 40rem);
     padding: 0.4rem;
     resize: none;
     border: 1px solid #ccc;
@@ -24,10 +24,13 @@
   select:focus,
   textarea:focus {
     box-shadow: 0 1px 1px rgba(set-text-color($control-color), 0.1) inset,
-      0 0 8px rgba(set-text-color($control-color), 0.6);
+      0 0 10px 2px rgba(set-text-color($control-color), 0.6);
     outline: 0 none;
   }
   button {
     font: inherit;
+    &:focus {
+      outline: none;
+    }
   }
 }

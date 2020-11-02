@@ -29,34 +29,36 @@ ul {
 hr {
   opacity: 0.3;
 }
-#showcase:after {
-  content: '';
-  height: 70vh;
-  width: 100%;
-  display: block;
-  @supports (background-blend-mode: multiply) {
-    background: linear-gradient(
-        0deg,
-        rgba($secondary-color, $background-opacity),
-        rgba($primary-color, $background-opacity)
-      ),
-      $home-image no-repeat center center/cover;
-    background-blend-mode: multiply;
-    background-attachment: fixed;
+#showcase {
+  &:after {
+    content: '';
+    height: 70vh;
+    width: 100%;
+    display: block;
+    @supports (background-blend-mode: multiply) {
+      background: linear-gradient(
+          0deg,
+          rgba($secondary-color, $background-opacity),
+          rgba($primary-color, $background-opacity)
+        ),
+        $home-image no-repeat center center/cover;
+      background-blend-mode: multiply;
+      background-attachment: fixed;
+    }
   }
-}
-.showcase-content {
-  position: absolute;
-  width: 24rem;
-  height: 8rem;
-  left: 50%;
-  top: 30%;
-  z-index: 1;
-  margin-left: -12rem;
-  animation-name: animation;
-  animation-duration: 3s;
-  .title {
-    color: $light-color;
+  .showcase-content {
+    position: absolute;
+    width: 24rem;
+    height: 8rem;
+    left: 50%;
+    top: 30%;
+    z-index: 1;
+    margin-left: -12rem;
+    animation-name: animation;
+    animation-duration: 3s;
+    .title {
+      color: $light-color;
+    }
   }
 }
 

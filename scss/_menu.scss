@@ -55,10 +55,11 @@
 }
 
 .menu-nav {
+  @include transitionS;
   position: fixed;
   top: 0;
   right: 0;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-flow: row;
   align-items: center;
