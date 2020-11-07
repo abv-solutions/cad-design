@@ -65,16 +65,16 @@
   align-items: center;
   justify-content: center;
   background: rgba(darken($control-color, 10), $background-opacity);
-  border-bottom: 1px solid $dark-color;
   .nav-item {
     .nav-link {
       @include transitionS;
       display: inline-block;
-      font-size: clamp(1.2rem, calc(4vw + 0.3rem), 2rem);
-      padding: 1rem clamp(1rem, calc(2vw + 0.5rem), 3rem);
+      font-size: clamp(1.2rem, calc(4vw + 0.3rem), 1.8rem);
+      font-weight: bold;
+      padding: 0.5rem clamp(1rem, calc(2vw + 0.2rem), 1.6rem);
       color: set-text-color($control-color);
       &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
     }
   }

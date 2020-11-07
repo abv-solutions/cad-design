@@ -29,10 +29,35 @@ ul {
 hr {
   opacity: 0.3;
 }
+
+.company {
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logo {
+    width: clamp(8rem, calc(10vw + 5rem), 14rem);
+  }
+  .txt-type {
+    font-size: clamp(1rem, calc(1.5vw + 0.4rem), 1.5rem);
+    color: darken(set-text-color($control-color), 15);
+    line-height: 1.8;
+    & > .txt {
+      color: $light-color;
+      border-right: 0.05rem solid darken($light-color, 50);
+      position: relative;
+      top: -1rem;
+    }
+  }
+}
+
 #showcase {
   &:after {
     content: '';
-    height: 70vh;
+    height: 90vh;
     width: 100%;
     display: block;
     @supports (background-blend-mode: multiply) {
@@ -48,16 +73,29 @@ hr {
   }
   .showcase-content {
     position: absolute;
-    width: 24rem;
-    height: 8rem;
-    left: 50%;
-    top: 30%;
-    z-index: 1;
-    margin-left: -12rem;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     animation-name: animation;
     animation-duration: 3s;
-    .title {
-      color: $light-color;
+
+    .header {
+      min-height: clamp(5rem, calc(6vw + 3rem), 9.4rem);
+      text-align: center;
+      .x-large {
+        color: $light-color;
+        font-weight: bold;
+      }
+      .medium {
+        color: $light-color;
+        margin-top: clamp(1rem, calc(4.5vh + 0.3rem), 3rem);
+        margin-bottom: clamp(0.5rem, calc(2vw - 1rem), 1rem);
+      }
+    }
+    .btn-lead {
+      margin-top: clamp(0.5rem, calc(20vh - 6rem), 3rem);
     }
   }
 }
