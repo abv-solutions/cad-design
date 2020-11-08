@@ -1,6 +1,9 @@
 @include mediaMd {
 }
 @include mediaSm {
+  .mb-5 {
+    margin-bottom: 2rem;
+  }
   .hamburger-wrap {
     opacity: 1;
     z-index: 3;
@@ -22,7 +25,65 @@
   .company {
     top: 0;
   }
+  #keys {
+    grid-template-columns: repeat(1, 1fr);
+    min-height: 30vh;
+    .key {
+      p {
+        display: grid;
+        min-width: 12rem;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 1rem;
+        i {
+          padding-right: 0;
+          justify-self: center;
+        }
+      }
+    }
+  }
+}
+
+@include mediaHMd {
+  #keys {
+    .key {
+      p {
+        font-size: 1rem;
+        i {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 }
 
 @include mediaHSm {
+  #showcase:after {
+    height: 100vh;
+  }
+  #keys {
+    min-height: 8rem;
+    .key {
+      p {
+        font-size: clamp(1rem, calc(1.5vw + 0.4rem), 1.5rem);
+        i {
+          font-size: clamp(2rem, calc(3vw + 0.8rem), 3rem);
+        }
+      }
+    }
+  }
+  .x-large {
+    font-size: 1.8rem;
+  }
+  .medium {
+    font-size: 1rem;
+  }
+}
+
+@include mediaSmHXs {
+  .x-large {
+    font-size: 1.3rem;
+  }
+  .medium {
+    font-size: 0.8rem;
+  }
 }

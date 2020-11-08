@@ -44,12 +44,11 @@ hr {
   .txt-type {
     font-size: clamp(1rem, calc(1.5vw + 0.4rem), 1.5rem);
     color: darken(set-text-color($control-color), 15);
-    line-height: 1.8;
+    position: relative;
+    top: -1rem;
     & > .txt {
       color: $light-color;
       border-right: 0.05rem solid darken($light-color, 50);
-      position: relative;
-      top: -1rem;
     }
   }
 }
@@ -97,6 +96,30 @@ hr {
     .btn-lead {
       margin-top: clamp(0.5rem, calc(20vh - 6rem), 3rem);
     }
+  }
+}
+
+#keys {
+  height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  .key {
+    display: flex;
+    justify-content: center;
+    p {
+      font-size: clamp(1rem, calc(1.5vw + 0.4rem), 1.5rem);
+      display: flex;
+      align-items: center;
+    }
+  }
+  & .key:first-child {
+    background: darken(set-background-color($control-color), 20);
+  }
+  & .key:nth-child(2) {
+    background: darken(set-background-color($control-color), 15);
+  }
+  & .key:nth-child(3) {
+    background: darken(set-background-color($control-color), 10);
   }
 }
 
