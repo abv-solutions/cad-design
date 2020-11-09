@@ -113,13 +113,32 @@ hr {
     }
   }
   & .key:first-child {
-    background: darken(set-background-color($control-color), 20);
+    background: darken(set-background-color($control-color), 10);
   }
   & .key:nth-child(2) {
     background: darken(set-background-color($control-color), 15);
   }
   & .key:nth-child(3) {
-    background: darken(set-background-color($control-color), 10);
+    background: darken(set-background-color($control-color), 20);
+  }
+}
+
+#about {
+  .cost {
+    display: flex;
+    flex-flow: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: clamp(10rem, calc(25vw + 3rem), 15rem);
+    }
+    .right {
+      padding-left: clamp(0rem, calc(4vw - 2rem), 2rem);
+      p {
+        max-width: clamp(20rem, calc(40vw + 3rem), 40rem);
+        font-size: clamp(1rem, calc(1vw + 0.3rem), 1.3rem);
+      }
+    }
   }
 }
 
