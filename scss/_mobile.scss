@@ -1,4 +1,19 @@
 @include mediaMd {
+  #services {
+    .hook {
+      &-content {
+        height: inherit;
+        flex-direction: column-reverse;
+        .left {
+          text-align: center;
+        }
+        .right {
+          padding: 0 1rem;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 @include mediaSm {
   .mb-5 {

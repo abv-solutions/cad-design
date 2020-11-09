@@ -65,7 +65,7 @@
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  background: rgba(darken($control-color, 10), $background-opacity);
+  background: rgba(darken($control-color, 10), 0.9);
   .nav-item {
     .nav-link {
       @include transitionS;

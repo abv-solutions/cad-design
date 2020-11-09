@@ -108,6 +108,7 @@ hr {
     justify-content: center;
     p {
       font-size: clamp(1rem, calc(1.5vw + 0.4rem), 1.5rem);
+      font-weight: bold;
       display: flex;
       align-items: center;
     }
@@ -137,6 +138,114 @@ hr {
       p {
         max-width: clamp(20rem, calc(40vw + 3rem), 40rem);
         font-size: clamp(1rem, calc(1vw + 0.3rem), 1.3rem);
+      }
+    }
+  }
+}
+
+.cost-img {
+  height: 25rem;
+  max-height: 70vh;
+  @supports (background-blend-mode: multiply) {
+    background: linear-gradient(
+        0deg,
+        rgba($control-color, $background-opacity),
+        rgba($dark-color, $background-opacity)
+      ),
+      $hook-image repeat;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+  }
+}
+
+#services {
+  .hook {
+    position: relative;
+    width: 100%;
+    &:after {
+      content: '';
+      height: calc(40rem - clamp(0rem, 30vw, 10rem));
+      display: block;
+      background: linear-gradient(
+        0deg,
+        rgba($control-color, 0.5),
+        rgba($dark-color, 0.4)
+      );
+    }
+    &-content {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .left {
+        font-weight: bold;
+        padding: 0 clamp(1rem, 5vw, 3rem);
+      }
+      .right {
+        padding-right: clamp(1rem, 5vw, 3rem);
+        p {
+          font-weight: bold;
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+  .skills {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    .skill {
+      width: 20rem;
+      .lead {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .steps {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    .step {
+      width: 20rem;
+      text-align: center;
+      img {
+        width: 10rem;
+      }
+    }
+  }
+  .lead-gen {
+    position: relative;
+    width: 100%;
+    &:after {
+      content: '';
+      height: 30rem;
+      max-height: 100vh;
+      z-index: -1;
+      display: block;
+      @supports (background-blend-mode: multiply) {
+        background: linear-gradient(
+            0deg,
+            rgba($control-color, 0.9),
+            rgba($control-color, 0.9)
+          ),
+          $call-image no-repeat center center/cover;
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+      }
+    }
+    &-content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        max-width: 45rem;
       }
     }
   }
