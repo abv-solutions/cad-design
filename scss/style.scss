@@ -47,6 +47,7 @@ hr {
     position: relative;
     top: -1rem;
     & > .txt {
+      font-weight: lighter;
       color: $light-color;
       border-right: 0.05rem solid darken($light-color, 50);
     }
@@ -83,12 +84,12 @@ hr {
     .header {
       min-height: clamp(5rem, calc(6vw + 3rem), 9.4rem);
       text-align: center;
+      color: $light-color;
       .x-large {
-        color: $light-color;
         font-weight: bold;
       }
       .medium {
-        color: $light-color;
+        font-weight: lighter;
         margin-top: clamp(1rem, calc(4.5vh + 0.3rem), 3rem);
         margin-bottom: clamp(0.5rem, calc(2vw - 1rem), 1rem);
       }
@@ -108,7 +109,6 @@ hr {
     justify-content: center;
     p {
       font-size: clamp(1rem, calc(1.5vw + 0.4rem), 1.5rem);
-      font-weight: bold;
       display: flex;
       align-items: center;
     }
@@ -133,7 +133,7 @@ hr {
     img {
       width: clamp(10rem, calc(25vw + 3rem), 15rem);
     }
-    .right {
+    .left {
       padding-left: clamp(0rem, calc(4vw - 2rem), 2rem);
       p {
         max-width: clamp(20rem, calc(40vw + 3rem), 40rem);
@@ -160,35 +160,19 @@ hr {
 
 #services {
   .hook {
-    position: relative;
-    width: 100%;
-    &:after {
-      content: '';
-      height: calc(40rem - clamp(0rem, 30vw, 10rem));
-      display: block;
-      background: linear-gradient(
-        0deg,
-        rgba($control-color, 0.5),
-        rgba($dark-color, 0.4)
-      );
+    background: linear-gradient(0deg, $control-color, rgba($dark-color, 0.4));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .left {
+      padding: 0 clamp(1rem, 5vw, 3rem);
     }
-    &-content {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      .left {
-        font-weight: bold;
-        padding: 0 clamp(1rem, 5vw, 3rem);
-      }
-      .right {
-        padding-right: clamp(1rem, 5vw, 3rem);
-        p {
-          font-weight: bold;
-          line-height: 1.3;
-        }
+    .right {
+      padding-right: clamp(1rem, 5vw, 3rem);
+      text-align: right;
+      p {
+        white-space: nowrap;
+        line-height: 1.3;
       }
     }
   }
@@ -219,6 +203,7 @@ hr {
   .lead-gen {
     position: relative;
     width: 100%;
+    color: $light-color;
     &:after {
       content: '';
       height: 30rem;
@@ -228,8 +213,8 @@ hr {
       @supports (background-blend-mode: multiply) {
         background: linear-gradient(
             0deg,
-            rgba($control-color, 0.9),
-            rgba($control-color, 0.9)
+            rgba($dark-color, 0.9),
+            rgba($dark-color, 0.4)
           ),
           $call-image no-repeat center center/cover;
         background-blend-mode: multiply;
@@ -245,9 +230,60 @@ hr {
       justify-content: center;
       align-items: center;
       p {
+        font-weight: lighter;
         max-width: 45rem;
       }
     }
+  }
+}
+
+.info {
+  .lead {
+    text-align: justify;
+  }
+  .technologies {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    li {
+      position: relative;
+      font-size: 1.2rem;
+      width: 10rem;
+      text-align: center;
+      font-weight: bold;
+      i {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        opacity: 0.4;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+#work {
+  .work-description {
+    text-align: justify;
+  }
+}
+
+#call {
+  background: linear-gradient(
+    0deg,
+    $control-color,
+    rgba($dark-color, 0.2),
+    $control-color
+  );
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    max-width: 70rem;
   }
 }
 

@@ -1,16 +1,13 @@
 @include mediaMd {
   #services {
     .hook {
-      &-content {
-        height: inherit;
-        flex-direction: column-reverse;
-        .left {
-          text-align: center;
-        }
-        .right {
-          padding: 0 1rem;
-          text-align: center;
-        }
+      flex-direction: column-reverse;
+      .left {
+        text-align: center;
+      }
+      .right {
+        padding: 0 1rem;
+        text-align: center;
       }
     }
   }
@@ -56,6 +53,55 @@
       }
     }
   }
+  #services {
+    .hook {
+      .right {
+        p {
+          white-space: normal;
+        }
+      }
+    }
+  }
+  .info {
+    .lead {
+      text-align: left;
+    }
+    .technologies {
+      li {
+        font-size: 1rem;
+        width: 6.5rem;
+        i {
+          top: 25%;
+          right: 10%;
+        }
+      }
+    }
+  }
+  #work {
+    .work-description {
+      text-align: left;
+    }
+  }
+  #call {
+    form {
+      button {
+        i {
+          padding: 0;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+  .form {
+    input:focus,
+    select:focus,
+    textarea:focus {
+      box-shadow: 0 1px 1px rgba(set-text-color($control-color), 0.1) inset,
+        0 0 5px 1px rgba(set-text-color($control-color), 0.6);
+    }
+  }
 }
 
 @include mediaHMd {
@@ -91,6 +137,12 @@
   }
   .medium {
     font-size: 1rem;
+  }
+}
+
+@include mediaMdHSm {
+  .company {
+    visibility: hidden;
   }
 }
 

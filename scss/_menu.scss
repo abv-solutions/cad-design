@@ -6,52 +6,52 @@
   height: 3rem;
   z-index: -1;
   opacity: 0;
-}
-.hamburger-wrap .toggle {
-  position: absolute;
-  width: 3rem;
-  height: 3rem;
-  z-index: 2;
-  opacity: 0;
-  cursor: pointer;
-}
-.hamburger-wrap .hamburger {
-  width: 3rem;
-  height: 3rem;
-}
-
-.hamburger-wrap .hamburger > span {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background: $light-color;
-  transition: all cubic-bezier(0.25, 0.1, 0.3, 1.5) 0.3s;
-}
-
-.hamburger-wrap .hamburger > span:first-child {
-  top: 20%;
-}
-.hamburger-wrap .hamburger > span:nth-child(3) {
-  top: 80%;
-}
-
-.hamburger-wrap .toggle:checked + .hamburger > span {
-  background: set-text-color($control-color);
-}
-.hamburger-wrap .toggle:checked + .hamburger > span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger-wrap .toggle:checked + .hamburger > span:first-child,
-.hamburger-wrap .toggle:checked + .hamburger > span:nth-child(3) {
-  top: 50%;
-}
-.hamburger-wrap .toggle:checked + .hamburger > span:first-child {
-  transform: rotate(45deg);
-}
-.hamburger-wrap .toggle:checked + .hamburger > span:nth-child(3) {
-  transform: rotate(-45deg);
+  .toggle {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    &:checked + .hamburger {
+      & > span {
+        background: set-text-color($control-color);
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:first-child {
+          box-shadow: none;
+          top: 50%;
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          box-shadow: none;
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+  .hamburger {
+    width: 3rem;
+    height: 3rem;
+    & > span {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      box-shadow: 0 0 5px 1px set-background-color($dark-color);
+      background: $light-color;
+      transition: all cubic-bezier(0.25, 0.1, 0.3, 1.5) 0.3s;
+      &:first-child {
+        top: 20%;
+      }
+      &:nth-child(3) {
+        top: 80%;
+      }
+    }
+  }
 }
 
 .menu-nav {
