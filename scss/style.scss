@@ -270,20 +270,32 @@ hr {
 }
 
 #call {
-  background: linear-gradient(
-    0deg,
-    $control-color,
-    rgba($dark-color, 0.2),
-    $control-color
-  );
+  position: relative;
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  p {
-    max-width: 70rem;
+  &:after {
+    content: '';
+    height: calc(55rem - clamp(0rem, 50vw, 20rem));
+    z-index: -1;
+    display: block;
+    background: linear-gradient(
+        0deg,
+        rgba($control-color, 1),
+        rgba($control-color, 0.92),
+        rgba($control-color, 1)
+      ),
+      $pattern-image round;
+  }
+  .call-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      max-width: 70rem;
+    }
   }
 }
 

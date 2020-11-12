@@ -55,6 +55,7 @@
   }
   #services {
     .hook {
+      padding-top: 1rem;
       .right {
         p {
           white-space: normal;
@@ -83,13 +84,15 @@
     }
   }
   #call {
-    form {
-      button {
-        i {
-          padding: 0;
-        }
-        span {
-          display: none;
+    .call-content {
+      form {
+        button {
+          i {
+            padding: 0;
+          }
+          span {
+            display: none;
+          }
         }
       }
     }
