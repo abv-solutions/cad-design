@@ -144,8 +144,8 @@ hr {
 }
 
 .cost-img {
-  height: 25rem;
-  max-height: 70vh;
+  height: 20rem;
+  max-height: 50vh;
   @supports (background-blend-mode: multiply) {
     background: linear-gradient(
         0deg,
