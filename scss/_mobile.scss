@@ -1,149 +1,149 @@
 @include mediaMd {
-  #services {
-    .hook {
-      flex-direction: column-reverse;
-      .left {
-        text-align: center;
-      }
-      .right {
-        padding: 0 1rem;
-        text-align: center;
-      }
-    }
-  }
+	#services {
+		.hook {
+			flex-direction: column-reverse;
+			.left {
+				text-align: center;
+			}
+			.right {
+				padding: 0 1rem;
+				text-align: center;
+			}
+		}
+	}
 }
 @include mediaSm {
-  .mb-5 {
-    margin-bottom: 2rem;
-  }
-  .hamburger-wrap {
-    opacity: 1;
-    z-index: 3;
-  }
-  .menu-nav {
-    flex-flow: column;
-    opacity: 0;
-    z-index: -1;
-    &.show {
-      opacity: 1;
-      z-index: 2;
-    }
-    .nav-item {
-      .nav-link {
-        padding: 0.5rem;
-      }
-    }
-  }
-  .company {
-    top: 0;
-  }
-  #keys {
-    grid-template-columns: repeat(1, 1fr);
-    min-height: 30vh;
-    .key {
-      p {
-        display: grid;
-        min-width: 11rem;
-        grid-template-columns: 1fr 3fr;
-        grid-gap: 1rem;
-        i {
-          padding-right: 0;
-          justify-self: center;
-        }
-      }
-    }
-  }
-  #services {
-    .hook {
-      padding-top: 1rem;
-      .right {
-        p {
-          white-space: normal;
-        }
-      }
-    }
-  }
-  #about {
-    .lead {
-      text-align: left;
-    }
-  }
-  #work {
-    .work-description {
-      text-align: left;
-    }
-  }
-  #call {
-    .call-content {
-      form {
-        button {
-          i {
-            padding: 0;
-          }
-          span {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-  .form {
-    input:focus,
-    select:focus,
-    textarea:focus {
-      box-shadow: 0 1px 1px rgba(set-text-color($control-color), 0.1) inset,
-        0 0 5px 1px rgba(set-text-color($control-color), 0.6);
-    }
-  }
+	.mb-5 {
+		margin-bottom: 2rem;
+	}
+	.hamburger-wrap {
+		opacity: 1;
+		z-index: 3;
+	}
+	.menu-nav {
+		flex-flow: column;
+		opacity: 0;
+		z-index: -1;
+		&.show {
+			opacity: 1;
+			z-index: 2;
+		}
+		.nav-item {
+			.nav-link {
+				padding: 0.5rem;
+			}
+		}
+	}
+	.company {
+		top: 0;
+	}
+	#keys {
+		grid-template-columns: repeat(1, 1fr);
+		min-height: 30vh;
+		.key {
+			p {
+				display: grid;
+				min-width: 11rem;
+				grid-template-columns: 1fr 3fr;
+				grid-gap: 1rem;
+				i {
+					padding-right: 0;
+					justify-self: center;
+				}
+			}
+		}
+	}
+	#services {
+		.hook {
+			padding-top: 1rem;
+			.right {
+				p {
+					white-space: normal;
+				}
+			}
+		}
+	}
+	#about {
+		.lead {
+			text-align: left;
+		}
+	}
+	#work {
+		.work-description {
+			text-align: left;
+		}
+	}
+	#call {
+		.call-content {
+			form {
+				button {
+					i {
+						padding: 0;
+					}
+					span {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.form {
+		input:focus,
+		select:focus,
+		textarea:focus {
+			box-shadow: 0 1px 1px rgba(set-text-color($control-color), 0.1) inset,
+				0 0 5px 1px rgba(set-text-color($control-color), 0.6);
+		}
+	}
 }
 
 @include mediaHMd {
-  #keys {
-    .key {
-      p {
-        font-size: 1rem;
-        i {
-          font-size: 2rem;
-        }
-      }
-    }
-  }
+	#keys {
+		.key {
+			p {
+				font-size: 1rem;
+				i {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
 }
 
 @include mediaHSm {
-  #showcase:after {
-    height: 100vh;
-  }
-  #keys {
-    min-height: 8rem;
-    .key {
-      p {
-        font-size: clamp(1rem, calc(1.5vw + 0.4rem), 1.5rem);
-        i {
-          font-size: clamp(2rem, calc(3vw + 0.8rem), 3rem);
-        }
-      }
-    }
-  }
-  .x-large {
-    font-size: 1.8rem;
-  }
-  .medium {
-    font-size: 1rem;
-  }
+	#showcase:after {
+		height: 100vh;
+	}
+	#keys {
+		min-height: 8rem;
+		.key {
+			p {
+				font-size: clamp(1rem, calc(1.5vw + 0.4rem), 1.5rem);
+				i {
+					font-size: clamp(2rem, calc(3vw + 0.8rem), 3rem);
+				}
+			}
+		}
+	}
+	.x-large {
+		font-size: 1.8rem;
+	}
+	.medium {
+		font-size: 1rem;
+	}
 }
 
 @include mediaMdHSm {
-  .company {
-    visibility: hidden;
-  }
+	.company {
+		visibility: hidden;
+	}
 }
 
 @include mediaSmHXs {
-  .x-large {
-    font-size: 1.3rem;
-  }
-  .medium {
-    font-size: 0.8rem;
-  }
+	.x-large {
+		font-size: 1.3rem;
+	}
+	.medium {
+		font-size: 0.8rem;
+	}
 }
