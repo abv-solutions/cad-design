@@ -3,21 +3,27 @@ const menuNav = document.querySelector('.menu-nav')
 const navItems = document.querySelectorAll('.nav-item')
 const txtElement = document.querySelector('.txt-type')
 
+let initial = true
 let currentLanguage = 'en'
-let currentTheme = 'Light'
+let currentTheme = 'Dark'
 
 document.addEventListener('DOMContentLoaded', () => TypeWriter.start())
 toggle.addEventListener('click', toggleMenu)
 
-changeTheme(currentTheme)
 changeLanguage(currentLanguage)
 
 // Change color theme
 function changeTheme() {
 	let link = document.createElement('link')
 	link.setAttribute('rel', 'stylesheet')
+	link.setAttribute('type', 'text/css')
 	link.setAttribute('href', `css/style${currentTheme}.css`)
 	document.head.appendChild(link)
+	setTimeout(() => {
+		document.styleSheets[2].disabled = true
+		document.head.removeChild(document.head.childNodes[initial ? 17 : 18])
+		initial = false
+	}, 300)
 
 	document.querySelector('.pitch img').src = `img/icons/cost-${
 		currentTheme == 'Dark' ? 'w' : 'b'
