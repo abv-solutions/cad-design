@@ -4,11 +4,12 @@ const navItems = document.querySelectorAll('.nav-item')
 const txtElement = document.querySelector('.txt-type')
 
 let currentLanguage = 'en'
-let currentTheme = 'Dark'
+let currentTheme = 'Light'
 
 document.addEventListener('DOMContentLoaded', () => TypeWriter.start())
 toggle.addEventListener('click', toggleMenu)
 
+changeTheme(currentTheme)
 changeLanguage(currentLanguage)
 
 // Change color theme
