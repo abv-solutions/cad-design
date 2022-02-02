@@ -54,6 +54,16 @@ hr {
 	}
 }
 
+.toggle-buttons {
+	position: absolute;
+	right: 0;
+	top: 4rem;
+	z-index: 2;
+	a {
+		color: $light-color;
+	}
+}
+
 #showcase {
 	&:after {
 		content: '';

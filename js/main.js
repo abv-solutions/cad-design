@@ -3,42 +3,65 @@ const menuNav = document.querySelector('.menu-nav')
 const navItems = document.querySelectorAll('.nav-item')
 const txtElement = document.querySelector('.txt-type')
 
+let currentLanguage = 'en'
+let currentTheme = 'Dark'
+
 document.addEventListener('DOMContentLoaded', () => TypeWriter.start())
 toggle.addEventListener('click', toggleMenu)
 
-changeTheme('Light')
-changeLanguage('ro')
+changeLanguage(currentLanguage)
 
-function changeTheme(theme) {
+// Change color theme
+function changeTheme() {
 	let link = document.createElement('link')
 	link.setAttribute('rel', 'stylesheet')
-	link.setAttribute('href', `css/style${theme}.css`)
+	link.setAttribute('href', `css/style${currentTheme}.css`)
 	document.head.appendChild(link)
+
+	document.querySelector('.pitch img').src = `img/icons/cost-${
+		currentTheme == 'Dark' ? 'w' : 'b'
+	}.png`
+	document
+		.querySelectorAll('.step img')
+		.forEach(
+			(e, i) =>
+				(e.src = `img/icons/step-${i + 1}-${
+					currentTheme == 'Dark' ? 'w' : 'b'
+				}.png`)
+		)
+
+	currentTheme = currentTheme == 'Light' ? 'Dark' : 'Light'
 }
 
-function changeLanguage(language) {
+// Change text language
+function changeLanguage() {
 	document
-		.querySelectorAll(`span[lang="${language}"]`)
+		.querySelectorAll(`span[lang="${currentLanguage}"]`)
 		.forEach((e) => (e.style.display = 'block'))
 	document
-		.querySelectorAll(`span[lang="${language}-inline"]`)
+		.querySelectorAll(`span[lang="${currentLanguage}-inline"]`)
 		.forEach((e) => (e.style.display = 'inline'))
 	document
-		.querySelectorAll(`span[lang="${language == 'en' ? 'ro' : 'en'}"]`)
+		.querySelectorAll(`span[lang="${currentLanguage == 'en' ? 'ro' : 'en'}"]`)
 		.forEach((e) => (e.style.display = 'none'))
 	document
-		.querySelectorAll(`span[lang="${language == 'en' ? 'ro' : 'en'}-inline"]`)
+		.querySelectorAll(
+			`span[lang="${currentLanguage == 'en' ? 'ro' : 'en'}-inline"]`
+		)
 		.forEach((e) => (e.style.display = 'none'))
 	document
 		.querySelectorAll('input[name="email"]')
 		.forEach(
 			(e) =>
-				(e.placeholder = language == 'en' ? 'Email address' : 'Adresă de email')
+				(e.placeholder =
+					currentLanguage == 'en' ? 'Email address' : 'Adresă de email')
 		)
 	document.querySelector('input[name="name"]').placeholder =
-		language == 'en' ? 'Name' : 'Nume'
+		currentLanguage == 'en' ? 'Name' : 'Nume'
 	document.querySelector('textarea[name="message"]').placeholder =
-		language == 'en' ? 'Your message' : 'Mesaj'
+		currentLanguage == 'en' ? 'Your message' : 'Mesaj'
+
+	currentLanguage = currentLanguage == 'en' ? 'ro' : 'en'
 }
 
 function toggleMenu() {

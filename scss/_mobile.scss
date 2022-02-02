@@ -98,6 +98,9 @@
 }
 
 @include mediaHMd {
+	.toggle-buttons {
+		padding: 1rem 2rem;
+	}
 	#keys {
 		.key {
 			p {
@@ -113,6 +116,9 @@
 @include mediaHSm {
 	#showcase:after {
 		height: 100vh;
+	}
+	.toggle-buttons {
+		visibility: hidden;
 	}
 	#keys {
 		min-height: 8rem;
@@ -134,7 +140,8 @@
 }
 
 @include mediaMdHSm {
-	.company {
+	.company,
+	.toggle-buttons {
 		visibility: hidden;
 	}
 }
