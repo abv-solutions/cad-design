@@ -78,7 +78,7 @@ function checkForSmallWidth() {
 		document.documentElement.clientWidth || 0,
 		window.innerWidth || 0
 	)
-	let input = document.querySelector('.call-content form input')
+	let input = document.querySelector('.call-content form input[name="email"]')
 	if (vw < 430)
 		input.placeholder = currentLanguage == 'ro' ? 'Email address' : 'Email'
 	else
