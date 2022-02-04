@@ -4,9 +4,10 @@ const navItems = document.querySelectorAll('.nav-item')
 const txtElement = document.querySelector('.txt-type')
 
 let initial = true
-let currentLanguage = 'en'
+let currentLanguage = 'ro'
 let currentTheme = 'Dark'
 
+window.onresize = checkForSmallWidth
 document.addEventListener('DOMContentLoaded', () => TypeWriter.start())
 toggle.addEventListener('click', toggleMenu)
 
@@ -69,6 +70,20 @@ function changeLanguage() {
 		currentLanguage == 'en' ? 'Your message' : 'Mesaj'
 
 	currentLanguage = currentLanguage == 'en' ? 'ro' : 'en'
+	checkForSmallWidth()
+}
+
+function checkForSmallWidth() {
+	const vw = Math.max(
+		document.documentElement.clientWidth || 0,
+		window.innerWidth || 0
+	)
+	let input = document.querySelector('.call-content form input')
+	if (vw < 430)
+		input.placeholder = currentLanguage == 'ro' ? 'Email address' : 'Email'
+	else
+		input.placeholder =
+			currentLanguage == 'ro' ? 'Email address' : 'Adresă de email'
 }
 
 function toggleMenu() {

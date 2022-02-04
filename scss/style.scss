@@ -171,6 +171,7 @@ hr {
 #services {
 	.hook {
 		background: linear-gradient(0deg, $control-color, rgba($dark-color, 0.4));
+		// background: linear-gradient(0deg, $control-color, rgba($light-color, 0.25));
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -315,6 +316,13 @@ hr {
 				rgba($control-color, 1)
 			),
 			$pattern-image round;
+		// background: linear-gradient(
+		// 	0deg,
+		// 	rgba($light-color, 0.005),
+		// 	rgba($light-color, 0.1),
+		// 	rgba($light-color, 0.005)
+		// );
+		// // $pattern-image round;
 	}
 	.call-content {
 		position: absolute;
